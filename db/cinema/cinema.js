@@ -4,11 +4,16 @@ function getAllCinemas() {
   return knex("cinema").select("*");
 }
 
-function getCinema(name) {
-  return knex("cinema").where("name", name).select("*");
+function getCinemaById(id) {
+  return knex("cinema").where("id", id);
+}
+
+function getCinemaByName(name) {
+  return knex("cinema").where("name", 'like', `%${name}%`);
 }
 
 module.exports = {
   getAllCinemas,
-  getCinema
+  getCinemaById,
+  getCinemaByName,
 }
