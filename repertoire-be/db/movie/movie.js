@@ -5,7 +5,7 @@ function getAllMovies() {
 }
 
 function getMovieById(id) {
-  return knex("movie").where("id", id);
+  return knex("movie").where("id", id).first();
 }
 
 function getMovieByName(name) {
