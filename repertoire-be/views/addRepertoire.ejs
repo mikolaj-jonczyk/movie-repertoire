@@ -12,66 +12,62 @@
 
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
       <div class="container">
-        <a href="index.html" class="navbar-brand">Movie repertoire</a>
+        <a href="http://127.0.0.1:5500/repertoire-fe/index.html" class="navbar-brand">Movie repertoire</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="cinemas.html" class="nav-link active">Cinemas</a>
+              <a href="admin" class="nav-link">Admin panel</a>
             </li>
             <li class="nav-item">
-              <a href="movies.html" class="nav-link">Movies</a>
+              <a href="addMovie" class="nav-link">Add movie</a>
             </li>
             <li class="nav-item">
-              <a href="http://localhost:3000/login" class="nav-link">Login</a>
+              <a href="addCinema" class="nav-link">Add cinema</a>
+            </li>
+            <li class="nav-item">
+              <a href="addRepertoire" class="nav-link active">Add repertoire</a>
             </li>
           </ul>
         </div>
       </div>    
     </nav>
 
-    <section class="p-5" id="error" style="display:none;margin-top: 15rem;">
-      <div class="container">
-        <h1 class='pb-3' style="text-align:center;">There seems to be an issue with loading content</h1>
-        <h2 class='pb-3' style="text-align:center;">Please come back later</h2>
-      </div>
-    </section>
-    
-    <section class="p-5" id="search-section">
-      <div class="container">
-        <div class="d-md-flex justify-content-between align-items-center">
-          <h3 class="mb-3 mb-md-0">Search for cinema: </h3>
-          <div class="input-group">
-            <input type="text" class="form-control" id="search-text" placeholder="Enter search phrase.." />
-            <button class="btn btn-dark btn-lg" type="button" id="search-button">Search</button>
+    <section class="p-5">
+      <div class="container" style="width:40%">
+        <h1 class='pb-3' style="text-align:center;">Add repertoire:</h1>
+        <form>
+          <div class="form-group">
+            <label>Movie name</label>
+            <select class="form-control" id="select-movie">
+              
+            </select>
           </div>
-        </div>
-      </div>
-    </section>
+          <div class="form-group">
+            <label>Cinema name</label>
+            <select class="form-control" id="select-cinema">
 
-    <section class="p-5" id="cinema-section">
-      <div class="container">
-        <h1 class='pb-3' style="text-align:center;">Cinemas:</h1>
-        <ul id="cinemas" class="list-group list-group-flush"></ul>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <input id="data" type="text" class="form-control">
+          </div>
+          <a href="#" id="add" class="btn btn-dark m-2">Add</a>
+        </form>
       </div>
     </section>
 
     <footer class="mt-auto bg-dark text-white text-center p-2 pt-4">
       <div class="container">
-        <p>Copyright &copy; 2022 Movie repertoire</p>
+        <p class="lead">Copyright &copy; 2022 Movie repertoire</p>
       </div>
     </footer>
-
-    <script>
-      function openSingleCinema(id){
-          let url = 'singleCinema.html?id=' + id;
-          window.open(url, '_self');
-      }
-    </script>
-    <script src="js/cinema/searchCinema.js"></script>
-    <script src="js/cinema/allCinemas.js"></script>
+    <script src="js/cinema/getCinemaIdName.js"></script>
+    <script src="js/movie/getMovieIdName.js"></script>
+    <script src="js/repertoire/addRepertoire.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
   </body>

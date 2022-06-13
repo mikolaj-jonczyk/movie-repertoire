@@ -1,14 +1,18 @@
-$(document).ready(function(){
-  $.getScript("js/helpers/getUrlParameter.js", function() { 
-    var id = getUrlParameter('id');
-    var $singleCinema = $('#singleCinema');
-
-    $.ajax({
-        type: "GET",
-        url: 'http://localhost:3000/cinema/' + id,
-        contentType : 'application/javascript',
-        success: function(cinema) {
-          $singleCinema.append("<h2 class='rounded bg-dark text-white p-4'>" + cinema.name + "</h2></a>\
+$('#search-button').click(function(){
+  var $cinemas = $('#cinemas');
+  $.ajax({
+    type: "GET",
+    url: 'http://localhost:3000/cinema/name/' + $("#search-text").val(),
+    contentType : 'application/javascript',
+    success: function(filterdCinemas) {
+      $cinemas.empty();
+      if (filterdCinemas.length === 0) {
+         $cinemas.append("<div class='container'><h2 style='text-align:center;'>Sorry there is no such cinema!</h2></div>") 
+      } else {
+        $.each(filterdCinemas, function(i, cinema) {
+          $cinemas.append("<li class='list-group-item border-0'><a id='"+ cinema.id + "' onclick='openSingleCinema(this.id)' \
+          href='#' style='text-decoration: none;'> \
+          <h2 class='rounded bg-dark text-white p-4'>" + cinema.name + "</h2></a>\
           <div class='container'> \
             <div class='row'> \
               <div class='col-sm p-3'> \
@@ -33,15 +37,8 @@ $(document).ready(function(){
                 </div>\
               </div>\
             </div>\
-          </div>"
-        )},
-        error: function() {
-          $('#error').show();
-          $('#repertoire-section').hide();
-          $('#cinema-section').hide();
-        },
-        timeout: 1000 
-    });
-  });
+          </div> \
+        </li>"
+    )});
+  }}});
 });
-

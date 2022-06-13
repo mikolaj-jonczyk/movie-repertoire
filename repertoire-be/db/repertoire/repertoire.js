@@ -10,7 +10,16 @@ function getRepertoireByCinemaId(id) {
   .leftJoin("movie", "repertoire.movie_id", "movie.id").where("cinema_id", id);
 }
 
+async function createRepertoire(repertoire){
+  return knex("repertoire").insert({
+    movie_id: repertoire.movie_id,
+    cinema_id: repertoire.cinema_id,
+    data: repertoire.data,
+  });
+}
+
 module.exports = {
   getRepertoireByMovieId,
   getRepertoireByCinemaId,
+  createRepertoire,
 }

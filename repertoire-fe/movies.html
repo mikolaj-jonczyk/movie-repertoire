@@ -25,12 +25,22 @@
             <li class="nav-item">
               <a href="movies.html" class="nav-link active">Movies</a>
             </li>
+            <li class="nav-item">
+              <a href="http://localhost:3000/login" class="nav-link">Login</a>
+            </li>
           </ul>
         </div>
       </div>    
     </nav>
+
+    <section class="p-5" id="error" style="display:none;margin-top: 15rem;">
+      <div class="container">
+        <h1 class='pb-3' style="text-align:center;">There seems to be an issue with loading content</h1>
+        <h2 class='pb-3' style="text-align:center;">Please come back later</h2>
+      </div>
+    </section>
     
-    <section class="p-5">
+    <section class="p-5" id="search-section">
       <div class="container">
         <div class="d-md-flex justify-content-between align-items-center">
           <h3 class="mb-3 mb-md-0">Search for movie: </h3>
@@ -42,7 +52,7 @@
       </div>
     </section>
 
-    <section class="p-5">
+    <section class="p-5" id="movies-section">
       <div class="container">
         <h1 class='pb-3' style="text-align:center;">Movies:</h1>
         <ul id="movies" class="list-group list-group-flush"></ul>

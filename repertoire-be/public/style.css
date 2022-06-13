@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Koulen&display=swap');
+
+
+html, body {
+  font-family: 'Comfortaa', cursive;
+  height: 100%;
+}
+
+.navbar-brand {
+  font-family: 'Koulen', cursive;
+  font-size: 1.5rem;
+}
+
+
+
+
